@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport" id="viewport" />
+    <script type="text/javascript" src="js/jQuery2.0.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/css.css">
+    <link type="text/css" href="css/MoScroll.css" rel="stylesheet">
+    <title>商品列表</title>
+</head>
+<body>
+    <script type="text/javascript" src="js/FontSize.js"></script>
+    <div class="Milan-gL-situation">
+        <div class="Milan-gL-bg">
+            <header class="Milan-gL-hd">
+                <span class="lh25">商品列表</span>
+            </header>
+        </div>
+
+        <form action="" method="post" id="subGoodList3">
+            <ul class="Milan-gL2-dFFF1 Milan-gL3-ul">
+                <li class="Milan-gL3-dfSpan" id="title">
+                    <span>活动标题：</span>
+                    <span class="fr pr05" id="titleVal" data-check="required" data-information="活动标题"></span>
+                </li>
+                <li class="Milan-gL3-dfSpan">
+                    <div class="settings" style="display:none;">
+                        <select name="demo" id="demo">
+                            <option value="date">日期</option>
+                        </select>
+                    </div>
+                    <span>开始时间：</span>
+                    <span class="fr">
+                        <input placeholder="" class="Milan-gL3-fr demo-test-date demo-test-datetime demo-test-time demo-test-credit pr05" data-check="required" data-information="开始时间" type="text" value="" id="pickTime" readonly>
+                    </span>
+                </li>
+                <li class="Milan-gL3-dfSpan">
+                    <div class="settings" style="display:none;">
+                        <select name="demo">
+                            <option value="date">日期</option>
+                        </select>
+                    </div>
+                    <span>结束时间：</span>
+                    <span class="fr">
+                        <input placeholder="" class="Milan-gL3-fr demo-test-date demo-test-datetime demo-test-time demo-test-credit pr05" data-check="required" data-information="结束时间" type="text" value="" id="pickTime2" readonly>
+                    </span>
+                </li>
+                <li class="Milan-gL3-dfSpan">
+                    <span>电话：</span>
+                    <span class="fr"><input class="Milan-gL3-fr pr05" type="text" value="" id="Phone" data-check="required||mobile" data-information="电话" maxlength="11"></span>
+                </li>
+                <li class="Milan-gL3-dfSpan">
+                    <span>店铺名称：</span>
+                    <span class="fr"><input class="Milan-gL3-fr pr05" type="text" value="" id="StoreName" data-check="required" data-information="店铺名称" maxlength="20"></span>
+                </li>
+                <li class="Milan-gL3-dfSpan">
+                    <span>店铺地址：</span>
+                    <span class="fr"><input class="Milan-gL3-fr pr05" type="text" value="" id="StoreAddress" data-check="required" data-information="店铺地址" maxlength="20"></span>
+                </li>
+                <li class="Milan-gL3-dfSpan">
+                    <span>运费：</span>
+                    <span class="fr"><input class="Milan-gL3-fr pr05" type="text" value="" id="Freight" data-check="required" data-information="运费" maxlength="20"></span>
+                </li>
+                <li class="Milan-gL2-dfSpan2 Milan-gL3-dfSpan2">
+                    <span>活动模板：</span>
+                    <div class="Milan-gL3-ftDiv fr">
+                        <img class="Milan-gL3-ShowIcon" src="images/showImg.png">
+                    </div>
+                </li>
+            </ul>
+
+            <footer class="Milan-gL2-ft clear">
+                <div class="Milan-gL-center clear">
+                    <input type="submit" class="Milan-gL2-f5 Milan-gL-submit" id="submit" value="保存，下一步">
+                </div>
+            </footer>
+        </form>
+    </div>
+    <script type="text/javascript" src="js/MoScroll.js"></script>
+    <script type="text/javascript" src="js/js.js"></script>
+</body>
+</html>

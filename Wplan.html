@@ -120,7 +120,7 @@
                     <li><a href="#" style="padding: 6px 20px;">我的借款</a></li>
                 </ul>
             </div>
-            <div class="community"><a class="fc_white" rel="nofollow" target="_blank" href="">关于我们</a></div>
+            <div class="community"><a class="fc_white" id="fc_white" data-id="111">关于我们</a></div>
         </div>
     </div>
 </div>
@@ -961,7 +961,7 @@ padding: .0em 0em; line-height: 1.5; top:55%;background: #4162a8;border-top: 1px
                 clearInterval(timer);
             }
             isTop = false;
-        }
+        };
 
         //回到顶部效果
         obtn.onclick = function(){
@@ -993,4 +993,55 @@ padding: .0em 0em; line-height: 1.5; top:55%;background: #4162a8;border-top: 1px
                     document.getElementById('ucIncomeV').innerHTML = upC_Value + '元';
                 }
             }
+
+            var iQuery = function (){
+                return new iQuery.prototype.init();
+            };
+            iQuery.prototype = {
+                init : function() {
+                    var _self = this;
+                    $("#fc_white").on('click', { '_this': $(this), 'data': 1 }, _self.aaa);
+                },
+                aaa: function (event) {
+                    var _self;
+                    for (var i in event.data) {
+                        try {
+                            if(event.data[i].length == 1) {
+                                _self = event.data[i];
+                            }
+                        } catch (e){
+                            alert('对象不存在！');
+                        }
+                    }
+                    console.log(_self);
+                }
+            };
+            iQuery.prototype.init.prototype = iQuery.prototype;
+            iQuery();
+
+            var Person = function (name,age) {
+                this.name = name;
+                this.age = age;
+                this.sayAge = function () {
+                    console.log("Age:"+this.age);
+                };
+            };
+            //定义到原型链上的方法
+            Person.prototype.sayName = function () {
+                console.log("Name:"+this.name);
+            };
+            var Worker = function (name,age,workerId) {
+                this.workerId= workerId;
+                Person.apply(this,arguments);//这里没有继承父类prototype中的方法
+            };
+            Worker.prototype = new Person();
+
+            Worker.prototype.showId = function () {
+                console.log("ID:",this.workerId);
+            };
+
+            var worker = new Worker("张三",22,"521608");
+            worker.sayAge(); //"Age:22"
+            worker.sayName();//"Name:张三"
+            worker.showId();//"ID: 521608"
         </script>

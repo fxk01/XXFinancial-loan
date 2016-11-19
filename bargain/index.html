@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport" id="viewport" />
+    <script type="text/javascript" src="js/jQuery2.0.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/css.css">
+    <title>首页</title>
+</head>
+<body>
+    <script type="text/javascript" src="js/FontSize.js"></script>
+    <div class="Milan-index-situation">
+        <div class="Milan-index-img3">
+            <div class="Milan-index-vip">
+                <div class="Milan-index-VipRed">
+                    <span class="Milan-index-commodity">我的商品</span>
+                </div>
+                <img class="Milan-index-commodityImg" src="images/vip.png">
+            </div>
+        </div>
+        <div class="Milan-index-top">
+            <marquee class="Milan-index-title" direction=left loop="1000">米兰家纺店欢迎您！</marquee>
+            <div class="Milan-index-clock">
+                <img class="Milan-index-clockImg" src="images/clock.png">
+                <label class="Milan-index-Va fs06">
+                    <span>活动倒计时：</span>
+                    <span id="TimeCount">06天3时28秒</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="Milan-index-middle">
+            <div class="Milan-index-05 fs06">
+                <span>人气指数：</span>
+                <span>2000000</span>
+            </div>
+
+            <ul>
+                <li class="cp">
+                    <div class="Milan-index-img">
+                        <div class="Milan-index-juZ">
+                            <img class="Milan-index-juZ1" src="images/SoldImg.png">
+                            <img class="Milan-index-juZ2" src="images/women_img.png">
+                        </div>
+                        <div class="fs06">
+                            <span class="Milan-index-left">粉色之恋-舒适四件套</span>
+                            <span class="Milan-index-right">已有3875人参与</span>
+                        </div>
+                        <div class="clear mt05">
+                            <button class="Milan-index-button">我要参与</button>
+                            <label class="Milan-index-OriginalPrice">
+                                原价：
+                                <span class="tdLt">￥899</span>
+                            </label><br />
+                            <label class="Milan-index-CurrentPrice">
+                                当前价格：
+                                <span>￥299</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+                <li class="cp">
+                    <div class="Milan-index-img">
+                        <div class="Milan-index-juZ">
+                            <img class="Milan-index-juZ2" src="images/women_img.png">
+                        </div>
+                        <div class="fs06">
+                            <span class="Milan-index-left">粉色之恋-舒适四件套</span>
+                            <span class="Milan-index-right">已有3875人参与</span>
+                        </div>
+                        <div class="clear mt05">
+                            <button class="Milan-index-button">我要参与</button>
+                            <label class="Milan-index-OriginalPrice">
+                                原价：
+                                <span class="tdLt">￥899</span>
+                            </label><br />
+                            <label class="Milan-index-CurrentPrice">
+                                当前价格：
+                                <span>￥299</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+                <li class="cp">
+                    <div class="Milan-index-img">
+                        <div class="Milan-index-juZ">
+                            <img class="Milan-index-juZ1" src="images/SoldImg.png">
+                            <img class="Milan-index-juZ2" src="images/women_img.png">
+                        </div>
+                        <div class="fs06">
+                            <span class="Milan-index-left">粉色之恋-舒适四件套</span>
+                            <span class="Milan-index-right">已有3875人参与</span>
+                        </div>
+                        <div class="clear mt05">
+                            <button class="Milan-index-button">我要参与</button>
+                            <label class="Milan-index-OriginalPrice">
+                                原价：
+                                <span class="tdLt">￥899</span>
+                            </label><br />
+                            <label class="Milan-index-CurrentPrice">
+                                当前价格：
+                                <span>￥299</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <div>
+                <footer class="Milan-index-bt">
+                    <div>上海米兰家纺专卖店</div>
+                    <div>联系热线：<span class="Milan-index-f4">400-7594358</span></div>
+                    <div>地址：上海市徐汇区虹桥路汇京国际广场088号</div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/js.js"></script>
+    <script type="text/javascript">
+        var index = function () {
+            return new index.prototype.init();
+        };
+        //首页
+        index.prototype = {
+            init: function () {
+                var _self = this;
+                _self.TimeCountdown({id: "TimeCount", allTime: 2678400});
+            },
+            /*
+             倒计时
+             */
+            TimeCountdown:function (args) {
+                var ele = document.getElementById(args.id);
+                var allTime = args.allTime;
+                var arr = [];
+                var t = Math.floor(allTime/(24*60*60));
+                var yt = allTime%(24*60*60);
+                var s = Math.floor(yt/(60*60));
+                var ys = yt%(60*60);
+                var f = Math.floor(ys/(60));
+                var yf = ys%(60);
+                var m = yf;
+                arr[0] = [t,"天"];
+                arr[1] = [s,"小时"];
+                arr[2] = [f,"分"];
+                arr[3] = [m,"秒"];
+                var s = ce(arr,0);
+                ele.innerHTML = s;
+                var dong;
+                dong = setInterval(function(){
+                    allTime -= 1;
+                    if(allTime <= 0) {
+                        clearInterval(dong);
+                        ele.innerHTML = "<span>0</span>秒";
+                        args.end();
+                    } else {
+                        t = Math.floor(allTime/(24*60*60));
+                        yt = allTime%(24*60*60);
+                        s = Math.floor(yt/(60*60));
+                        ys = yt%(60*60);
+                        f = Math.floor(ys/(60));
+                        yf = ys%(60);
+                        m = yf;
+                        arr[0] = [t,"天"];
+                        arr[1] = [s,"小时"];
+                        arr[2] = [f,"分"];
+                        arr[3] = [m,"秒"];
+                        var s = ce(arr,0);
+                        ele.innerHTML = s;
+                    }
+                },1000);
+                function ce(arr,sta) {
+                    var i = sta;
+                    if(i < arr.length){
+                        if(arr[i][0] != 0) {
+                            var s="";
+                            for(var j = i; j < arr.length; j++){
+                                s += "<span>"+arr[j][0]+"</span>"+arr[j][1];
+                            }
+                            return s;
+                        }else{
+                            return ce(arr,i+1);
+                        }
+                    }
+                }
+            }
+        };
+        index.prototype.init.prototype = index.prototype;
+    </script>
+</body>
+</html>
